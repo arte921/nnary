@@ -1,9 +1,9 @@
-use std::str;
+
 
 fn main() {
-    for i in 0..=20 {
+    for i in 0..=400 {
 
-        println!("i = {}, result = {}", i, naar_ntallig(i, 0, 20).0);
+        println!("\"normaal\": {}, mayaans {}", i, naar_ntallig(i, 0, 20).0);
     }
 }
 
@@ -28,10 +28,10 @@ fn naar_ntallig (n: u32, macht: u32, radix: u32) -> (String, u32) {
 
 }
 
-fn symbool (n: u32) -> str {
-    let zero = '\u{1D2E}';
-    let total = (zero as u32) + n;
-    
+fn symbool (n: u32) -> String {
+    ["𝋠", "𝋡", "𝋢", "𝋣", "𝋤", "𝋥", "𝋦", "𝋧", "𝋨", "𝋩", "𝋪", "𝋫", "𝋬", "𝋭", "𝋮", "𝋯", "𝋰", "𝋱", "𝋲", "𝋳"]
+        [n as usize]
+        .to_string()
 }
 
 /*
