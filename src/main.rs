@@ -7,14 +7,14 @@ fn main() {
 fn naar_ntallig (n: u32, macht: u32, radix: u32) -> (String, u32) {
     let mut huidige_x = n;
     let mut huidige_string = "".to_string();
-    let huidigemacht = radix.pow(macht);
 
-    if n >= huidigemacht * radix {
+    if n >= radix.pow(macht + 1) {
         let waarde = naar_ntallig(n, macht + 1, radix);
         huidige_string = waarde.0;
         huidige_x = waarde.1;
     }
 
+    let huidigemacht = radix.pow(macht);
     let aantal = huidige_x / huidigemacht;
     let rest = huidige_x % huidigemacht;
     let berekend_symbool = symbool(aantal);
